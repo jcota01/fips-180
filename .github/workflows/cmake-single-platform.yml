@@ -13,8 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - run: sudo apt install catch2
-
+    - run: sudo apt update && sudo apt install catch2
     - name: Configure CMake
       run: cmake --preset default
 
