@@ -1,0 +1,26 @@
+name: CMake on Unix
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - run: sudo apt-get update && sudo apt-get install catch2
+    - name: Configure CMake
+      run: cmake --preset default
+
+    - name: Build
+      run: cmake --build --preset default
+
+    - name: Test
+      working-directory: ${{github.workspace}}/build
+      run: ctest --output-on-failure
+
