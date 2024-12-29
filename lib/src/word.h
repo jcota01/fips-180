@@ -40,6 +40,8 @@ namespace type {
             // Bitwise NOT
             Word<T> operator~() const;
 
+            Word<T> left_rotate(uint32_t n) const;
+            Word<T> right_rotate(uint32_t n) const;
 
             friend class TestWord;
     };
