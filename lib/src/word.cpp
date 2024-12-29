@@ -33,6 +33,12 @@ Word<T> Word<T>::operator~() const{
 }
 
 template<typename T>
+Word<T> Word<T>::operator>>(uint32_t n) const{
+    T result = this->get() >> n;
+    return Word<T>(result);
+}
+
+template<typename T>
 Word<T> Word<T>::left_rotate(uint32_t n) const{
     T result = (this->get() << n) | (this->get() >> (sizeof(T) * 8 - n));
     return Word<T>(result);
