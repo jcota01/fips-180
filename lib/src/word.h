@@ -39,6 +39,8 @@ namespace type {
             Word<T> operator^(const Word<T>& rhs) const;
             // Bitwise NOT
             Word<T> operator~() const;
+            // Right bit shift
+            Word<T> operator>>(uint32_t n) const;
 
             Word<T> left_rotate(uint32_t n) const;
             Word<T> right_rotate(uint32_t n) const;
