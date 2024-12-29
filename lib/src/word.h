@@ -27,13 +27,26 @@ namespace type {
 
             virtual ~Word() = default;
 
-            T get() const {
-                return static_cast<T>(bytes);
-            }
+            T get() const { return static_cast<T>(bytes); }
+
+            // Modulo addition
+            Word<T> operator+(const Word<T>& rhs) const;
+            // Bitwise OR
+            Word<T> operator|(const Word<T>& rhs) const;
+            // Bitwise AND
+            Word<T> operator&(const Word<T>& rhs) const;
+            // Bitwise XOR
+            Word<T> operator^(const Word<T>& rhs) const;
+            // Bitwise NOT
+            Word<T> operator~() const;
 
 
             friend class TestWord;
     };
+
+
+    template class Word<uint32_t>;
+    template class Word<uint64_t>;
 }
 
 #endif
