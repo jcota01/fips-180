@@ -3,6 +3,7 @@ find_package(Catch2 3 REQUIRED)
 set(TEST_SOURCES
     word/test_word.cpp
     word/test_word_operations.cpp
+    word/test_word_shift.cpp
 )
 
 foreach(TEST_SOURCE ${TEST_SOURCES})
