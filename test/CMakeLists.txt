@@ -5,6 +5,7 @@ set(TEST_SOURCES
     word/test_word_operations.cpp
     word/test_word_shift.cpp
     block/test_block.cpp
+    pad/test_pad.cpp
 )
 
 foreach(TEST_SOURCE ${TEST_SOURCES})
